@@ -15,18 +15,18 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Group_11355" data-name="Group 11355" transform="translate(-166 -75)">
-    <g id="Group_9169" data-name="Group 9169" transform="translate(1 -162)">
-      <g transform="matrix(1, 0, 0, 1, 165, 237)" filter="url(#Ellipse_2741)">
+  <g id="Group_11353" data-name="Group 11353" transform="translate(-166 -70)">
+    <g id="Group_11352" data-name="Group 11352">
+      <g transform="matrix(1, 0, 0, 1, 166, 70)" filter="url(#Ellipse_2741)">
         <circle id="Ellipse_2741-2" data-name="Ellipse 2741" cx="39.5" cy="39.5" r="39.5" transform="translate(9 6)" fill="#fff"/>
       </g>
-      <g transform="matrix(1, 0, 0, 1, 165, 237)" filter="url(#Ellipse_2742)">
-        <g id="Ellipse_2742-2" data-name="Ellipse 2742" transform="translate(16 13)" fill="#fff" stroke="#f34d4d" stroke-linecap="round" stroke-width="2" stroke-dasharray="70 190">
+      <g transform="matrix(1, 0, 0, 1, 166, 70)" filter="url(#Ellipse_2742)">
+        <g id="Ellipse_2742-2" data-name="Ellipse 2742" transform="translate(16 13)" fill="#fff" stroke="#f34d4d" stroke-linecap="round" stroke-width="2" stroke-dasharray="50 190">
           <circle cx="33" cy="33" r="33" stroke="none"/>
           <circle cx="33" cy="33" r="32" fill="none"/>
         </g>
       </g>
-      <text id="_30_" data-name="30%" transform="translate(200 289)" fill="#131415" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">30%</tspan></text>
+      <text id="_10_" data-name="10%" transform="translate(201 122)" fill="#131415" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10%</tspan></text>
     </g>
   </g>
 </svg>

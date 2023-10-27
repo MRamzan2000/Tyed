@@ -20,7 +20,7 @@ class AgreementScreen extends StatefulWidget {
 }
 
 class _YesNoScreenState extends State<AgreementScreen> {
-  final PersonController controller = Get.put(PersonController());
+
   String? selectedValue = "Yes";
   Color selectedColor =
       AppColorsConstants.AppMainColor; // Custom color for selected RadioButton
@@ -32,7 +32,7 @@ class _YesNoScreenState extends State<AgreementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const CustomAppBar(
-          svgImagePath: 'assets/30percent.svg',
+          svgImagePath: 'assets/100%.svg',
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -183,7 +183,7 @@ class _YesNoScreenState extends State<AgreementScreen> {
                     alignment: Alignment.bottomCenter,
                     child: CustomElevatedButton(
                         onpress: () {
-                          Get.toNamed(RoutesName.YourAndSpouseSign);
+                          Get.toNamed(RoutesName.PaymentMethod);
                         },
                         text: "Next",
                         height: Get.height * 0.05,

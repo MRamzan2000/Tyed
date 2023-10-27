@@ -2,7 +2,7 @@
 
 import 'package:get/get.dart';
 
-class YesNoController extends GetxController {
+class YesNoScreen1Controller extends GetxController {
   RxString selectedValue = "Yes".obs;
 
   void setSelectedValue(String value) {

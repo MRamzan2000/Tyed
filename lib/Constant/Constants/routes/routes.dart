@@ -73,8 +73,8 @@ class AppRoutes {
     GetPage(
         name: RoutesName.FamilyDocumentsFolder,
         page: () => FamilyDocumentsFolder()),
-    GetPage(
-        name: RoutesName.YourAndSpouseSign, page: () => YourAndSpouseSign()),
+    // GetPage(
+    //     name: RoutesName.YourAndSpouseSign, page: () => YourAndSpouseSign()),
     // GetPage(name: RoutesName.CheckOutScreen, page: () => CheckOutScreen()),
     GetPage(name: RoutesName.PaymentMethod, page: () => PaymentMethod()),
     GetPage(
