@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "323043528214",
+    "project_id": "tyed-app",
+    "storage_bucket": "tyed-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323043528214:android:506bad48d4d8957b642f37",
+        "android_client_info": {
+          "package_name": "com.example.tyedapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-Ke4iTQu6CJPHy2e1tRvo8JcB65XyCvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,7 +9,7 @@ import 'package:tyedapp/View/ChangePasscode/ChangePasscode.dart';
 import 'package:tyedapp/View/CommitmentScreen/CommitmentMilestons.dart';
 import 'package:tyedapp/View/ContactListScreen/ContactListScreen.dart';
 import 'package:tyedapp/View/DownloadScreen/DownloadScreen.dart';
-import 'package:tyedapp/View/EditProfile/EditProfile.dart';
+import 'package:tyedapp/View/ProfileScreen/ProfileScreen.dart';
 import 'package:tyedapp/View/FamilyDocumentCheckout/FamilyDocChececkout.dart';
 import 'package:tyedapp/View/InheritanceScreen/InheritScreen.dart';
 import 'package:tyedapp/View/PaySpousal/PaySpousal.dart';
@@ -18,11 +18,11 @@ import 'package:tyedapp/View/PaymentMethod/PaymentMethod.dart';
 import 'package:tyedapp/View/PdfViewer/PdfViewer.dart';
 import 'package:tyedapp/View/PersonDetail/PersonDetail.dart';
 import 'package:tyedapp/View/PrivacyPolicyScreen/PrivacyPolicyScreen.dart';
-import 'package:tyedapp/View/ProfileScreen/ProfileScreen.dart';
+import 'package:tyedapp/View/EditProfile/EditProfileScreen.dart';
 import 'package:tyedapp/View/SaveDocumentsScreen/SaveDocumentsScreen.dart';
 import 'package:tyedapp/View/SelectCategory/SelectCategory.dart';
 import 'package:tyedapp/View/ShareDocumentsScreen/ShareDocumentsScreen.dart';
-import 'package:tyedapp/View/Signup/Signup.dart';
+import 'package:tyedapp/View/Signup/SignUpScreen.dart';
 import 'package:tyedapp/View/YesNoScreen2/YesNoScreen2.dart';
 import 'package:tyedapp/View/YesNoScreen3/YesNoScreen3.dart';
 import 'package:tyedapp/View/YesNoScreen4/YesNoScreen4.dart';
@@ -34,7 +34,7 @@ import '../../../View/AddFamilyDocumentsFolder/AddFamilyDocumentsFolder.dart';
 import '../../../View/DocumentsFolder/DocumentsFolder.dart';
 import '../../../View/MainScreen/MainScreen.dart';
 import '../../../View/Onboardscreen/OnboardScreen.dart';
-import '../../../View/Signin/signin.dart';
+import '../../../View/Signin/SignInScreen.dart';
 import '../../../View/YesNoScreen5/YesNoScreen5.dart';
 import '../../../Widgets/BottomNavBar.dart';
 import 'routesName.dart';
@@ -50,10 +50,10 @@ class AppRoutes {
       page: () => OnboardScreen(),
     ),
     GetPage(
-      name: RoutesName.Signin,
-      page: () => Signin(),
+      name: RoutesName.SignIn,
+      page: () => SignInScreen(),
     ),
-    GetPage(name: RoutesName.Signup, page: () => Signup()),
+    GetPage(name: RoutesName.Signup, page: () => SignUpScreen()),
     GetPage(name: RoutesName.MainScreen, page: () => MainScreen()),
     GetPage(
         name: RoutesName.CommitmentMilestone,
@@ -99,8 +99,8 @@ class AppRoutes {
     GetPage(name: RoutesName.ChangePasscode, page: () => ChangePasscode()),
     GetPage(
         name: RoutesName.YourTiedAgreement, page: () => YourTiedAgreement()),
-    GetPage(name: RoutesName.ProfileScreen, page: () => ProfileScreen()),
-    GetPage(name: RoutesName.EditProfile, page: () => EditProfile()),
+    GetPage(name: RoutesName.ProfileScreen, page: () => EditProfile()),
+    GetPage(name: RoutesName.EditProfile, page: () => ProfileScreen()),
     GetPage(
         name: RoutesName.PrivacyPolicyScreen,
         page: () => PrivacyPolicyScreen()),

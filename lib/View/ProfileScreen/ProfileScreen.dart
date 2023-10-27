@@ -1,135 +1,168 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:get/get.dart';
 import 'package:tyedapp/Constant/Constants/colors/Constants.dart';
-import 'package:tyedapp/View/EditProfile/EditProfile.dart';
+import 'package:tyedapp/View/EditProfile/EditProfileScreen.dart';
 
-import '../../Widgets/CustomButton.dart';
-import '../../Widgets/CustomTextField1.dart';
-import '../../viewModel/ProfileScreenController/ProfileScreenController.dart';
+import '../../Constant/Constants/founts/Constants.dart';
+import '../../Widgets/EditProfileWidget.dart';
+import '../../viewModel/SigninController/SigninController.dart';
 
-class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
-  final ProfileScreenController controller = Get.put(ProfileScreenController());
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  SignInController signInController = Get.find(tag: 'signInController');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[250],
       body: SingleChildScrollView(
-        child: SizedBox(
-          height: Get.height,
-          width: Get.width,
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: AppColorsConstants.AppMainColor,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20))),
-                    height: Get.height * 0.13,
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      color: AppColorsConstants.AppMainColor,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20))),
+                  height: Get.height * 0.13,
+                ),
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: Get.height * 0.090),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage(
+                        'assets/profileimagefinal.jpg',
+                      ),
+                    ),
                   ),
-                  Center(
+                ),
+                Center(
                     child: Padding(
-                      padding: EdgeInsets.only(top: Get.height * 0.03),
-                      child: Container(
-                        height: Get.height * 0.2,
-                        width: Get.width * 0.2,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                            "assets/profileimagefinal.jpg",
-                          )),
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: Get.width * 0.5,
-                    top: Get.height * 0.13,
-                    child: InkWell(
-                      onTap: () {
-                        controller.pickedImage();
-                      },
-                      child: SvgPicture.asset(
-                        "assets/camera.svg",
-                      ),
-                    ),
+                        padding: EdgeInsets.only(top: Get.height * 0.17),
+                        child: Text('John Machelle',
+                            style: AppTextConstant.SimpleStyle))),
+              ],
+            ),
+            SizedBox(
+              height: Get.height * 0.05,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color:
+                    Colors.white, // Set the background color of the container
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2), // Color of the shadow
+                    spreadRadius: 5, // Spread radius
+                    blurRadius: 7, // Blur radius
+                    offset: const Offset(0, 2), // Offset of the shadow
                   ),
                 ],
               ),
-              Padding(
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    CustomTextField1(
-                        controller: controller.firstNameController.value,
-                        svgIcon: Transform.scale(
-                            scale: .6,
-                            child: SvgPicture.asset("assets/bulkprofile.svg")),
-                        name: "First Name"),
                     SizedBox(
-                      height: Get.height * 0.04,
+                      height: Get.height * 0.026,
                     ),
-                    CustomTextField1(
-                        controller: controller.lastNameController.value,
-                        svgIcon: Transform.scale(
-                            scaleX: .6,
-                            scaleY: .6,
-                            child: SvgPicture.asset("assets/bulkprofile.svg")),
-                        name: "Last Name"),
+                    InkWell(
+                      onTap: () => Get.to(EditProfile()),
+                      child: CustomRowWithIcon(
+                        svgImagePath: 'assets/editprofile1.svg',
+                        text: 'Edit Profile',
+                        iconData: Icons.arrow_forward_ios_outlined,
+                      ),
+                    ),
                     SizedBox(
-                      height: Get.height * 0.03,
+                      height: Get.height * 0.022,
                     ),
-                    CustomTextField1(
-                        controller: controller.emailController.value,
-                        svgIcon: Transform.scale(
-                            scaleX: .6,
-                            scaleY: .6,
-                            child: SvgPicture.asset("assets/message.svg")),
-                        name: "Email"),
+                    CustomRowWithIcon(
+                      svgImagePath: 'assets/editprofile2.svg',
+                      text: 'Language',
+                      iconData: Icons.arrow_forward_ios_outlined,
+                    ),
                     SizedBox(
-                      height: Get.height * 0.04,
+                      height: Get.height * 0.022,
                     ),
-                    CustomTextField1(
-                        controller: controller.addressController.value,
-                        svgIcon: Transform.scale(
-                            scaleX: .6,
-                            scaleY: .6,
-                            child: SvgPicture.asset("assets/Location.svg")),
-                        name: "Address"),
+                    CustomRowWithIcon(
+                      svgImagePath: 'assets/editprofile3.svg',
+                      text: "Privacy & Policy",
+                      iconData: Icons.arrow_forward_ios_outlined,
+                    ),
                     SizedBox(
-                      height: Get.height * 0.04,
+                      height: Get.height * 0.022,
                     ),
-                    CustomTextField1(
-                        controller: controller.dateController.value,
-                        svgIcon: Transform.scale(
-                            scaleX: .6,
-                            scaleY: .6,
-                            child: SvgPicture.asset("assets/Calendar.svg")),
-                        name: "MM DD YYYY"),
+                    CustomRowWithIcon(
+                      svgImagePath: 'assets/editprofile4.svg',
+                      text: 'Help',
+                      iconData: Icons.arrow_forward_ios_outlined,
+                    ),
                     SizedBox(
-                      height: Get.height * 0.1,
+                      height: Get.height * 0.032,
                     ),
-                    CustomElevatedButton(
-                      onpress: () {
-                        Get.to(EditProfile());
-                      },
-                      text: "Save",
-                      height: Get.height * 0.05,
-                      width: Get.width * 0.42,
-                      colors: AppColorsConstants.AppMainColor,
+                    SizedBox(
+                      height: Get.height * 0.022,
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: Get.height * 0.006,
+            ),
+            Container(
+              height: Get.height * 0.05,
+              decoration: BoxDecoration(
+                color:
+                    Colors.white, // Set the background color of the container
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2), // Color of the shadow
+                    spreadRadius: 5, // Spread radius
+                    blurRadius: 7, // Blur radius
+                    offset: const Offset(0, 2), // Offset of the shadow
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: InkWell(
+                  onTap: () {
+                    signInController.signOutHandler();
+                  },
+                  child: CustomRowWithIcon(
+                    svgImagePath: 'assets/signout.svg',
+                    text: 'Signout',
+                    iconData: Icons.arrow_forward_ios_outlined,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: Get.height * 0.06,
+            ),
+            signInController.isSignOutLoading.value
+                ? SizedBox(
+                    height: 30,
+                    width: 30,
+                    child: CircularProgressIndicator(
+                        color: AppColorsConstants.AppMainColor),
+                  )
+                : Container()
+          ],
         ),
       ),
     );

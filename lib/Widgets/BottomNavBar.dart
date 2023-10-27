@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:tyedapp/View/MainScreen/MainScreen.dart';
-import 'package:tyedapp/View/ProfileScreen/ProfileScreen.dart';
+import 'package:tyedapp/View/EditProfile/EditProfileScreen.dart';
 import 'package:tyedapp/View/YouTiedAgreement/YourTiedAgreement.dart';
 
 import '../View/AddFamilyDocumentsFolder/AddFamilyDocumentsFolder.dart';
+import '../View/ProfileScreen/ProfileScreen.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);

@@ -14,6 +14,7 @@ class CustomTextFieldSignup extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
   final bool? readOnly;
+  final bool? obscureText;
   final Callback? onTap;
   const CustomTextFieldSignup(
       {this.onChanged,
@@ -23,6 +24,7 @@ class CustomTextFieldSignup extends StatelessWidget {
       this.suffixIcon,
       this.keyboardType,
       this.readOnly,
+      this.obscureText,
       this.onTap});
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class CustomTextFieldSignup extends StatelessWidget {
       height: Get.height * 0.058,
       child: TextFormField(
         onTap: onTap,
+        obscureText: obscureText ?? false,
         readOnly: readOnly ?? false,
         keyboardType: keyboardType,
         onChanged: onChanged,
@@ -57,56 +60,3 @@ class CustomTextFieldSignup extends StatelessWidget {
   }
 }
 
-class CustomCheckbox extends StatefulWidget {
-  @override
-  // ignore: library_private_types_in_public_api
-  _CustomCheckboxState createState() => _CustomCheckboxState();
-}
-
-class _CustomCheckboxState extends State<CustomCheckbox> {
-  bool isChecked = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          isChecked = !isChecked;
-        });
-      },
-      child: Container(
-        height: 20,
-        width: 20,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5), // Shadow color
-              blurRadius: 2, // Blur radius
-              offset: Offset(1.1, 2.1), // Offset of the shadow
-            ),
-          ],
-          borderRadius: BorderRadius.circular(52),
-          color: Colors.white,
-        ),
-        child: Container(
-          height: 20, // Adjust the height as needed
-          width: 20, // Adjust the width as needed
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: Colors.white, // Red outline color
-              width: 2.0,
-            ),
-          ),
-          child: isChecked
-              ? Icon(
-                  Icons.check,
-                  size: 15,
-                  color: Colors.green,
-                )
-              : null,
-        ),
-      ),
-    );
-  }
-}

@@ -4,7 +4,7 @@ class RoutesName {
   static const String OnboardScreen = '/';
   static const String FamilyDocumentsFolder = '/FamilyDocumentsFolder';
   static const String DocumentsFolder = '/DocumentsFolder';
-  static const String Signin = '/Signin';
+  static const String SignIn = '/Signin';
   static const String Signup = '/Signup';
   static const String CustomBottomNavigationBar = '/CustomBottomNavigationBar';
   static const String MainScreen = '/MainScreen';

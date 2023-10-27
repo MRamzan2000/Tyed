@@ -6,18 +6,23 @@ import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tyedapp/Constant/Constants/colors/Constants.dart';
 import 'package:tyedapp/Constant/Constants/routes/routesName.dart';
+import 'package:tyedapp/View/Signin/SignInScreen.dart';
 
 import '../../Constant/Constants/founts/Constants.dart';
 import '../../Widgets/OnboardButton.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
+
+
   @override
   State<OnboardScreen> createState() => _OnboardScreenState();
 }
 
 class _OnboardScreenState extends State<OnboardScreen> {
   final controller = PageController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +99,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     child: CustomElevatedButtonOnboardScreen(
                         label: 'Next  >>>',
                         onPressed: () {
-                          Get.toNamed(RoutesName.Signin);
+                          Get.offAllNamed(RoutesName.SignIn);
                         }),
                   ),
                   Positioned(
@@ -102,7 +107,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     top: Get.height * 0.05,
                     child: InkWell(
                         onTap: () {
-                          Get.toNamed(RoutesName.Signin);
+                          Get.offAllNamed(RoutesName.SignIn);
                         },
                         child: Text('skip')),
                   ),
@@ -170,7 +175,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     child: CustomElevatedButtonOnboardScreen(
                         label: 'Next  >>>',
                         onPressed: () {
-                          Get.toNamed(RoutesName.Signin);
+                          Get.offAllNamed(RoutesName.SignIn);
                         }),
                   ),
                   Positioned(
@@ -178,7 +183,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     top: Get.height * 0.05,
                     child: InkWell(
                         onTap: () {
-                          Get.toNamed(RoutesName.Signin);
+                          Get.offAllNamed(RoutesName.SignIn);
                         },
                         child: Text('skip')),
                   ),
